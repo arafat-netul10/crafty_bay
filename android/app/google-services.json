@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1013739704464",
+    "project_id": "ostad-firebase-project-7e547",
+    "storage_bucket": "ostad-firebase-project-7e547.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013739704464:android:8ab3afba6d773d5581c815",
+        "android_client_info": {
+          "package_name": "com.example.crafty_bay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNLUuK2bNRUX73qdGCX3y3BZwovRvn06I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013739704464:android:3b348129dcdb05ce81c815",
+        "android_client_info": {
+          "package_name": "com.example.firebasepractice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNLUuK2bNRUX73qdGCX3y3BZwovRvn06I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
