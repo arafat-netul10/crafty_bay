@@ -2,6 +2,7 @@ import 'package:crafty_bay/app/assets_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../l10n/app_localizations.dart';
 import '../widgets/app_logo.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -25,14 +26,14 @@ class _SplashScreenState extends State<SplashScreen> {
           Spacer(),
 
           Column(
+            spacing: 16,
             children: [
               CircularProgressIndicator(
                 color: Colors.cyan[200],),
-              SizedBox(height: 16,),
-              Text("Version 1.0.0"),
-              SizedBox(height: 16,),
+              Text("${AppLocalizations.of(context)!.version} 1.0.0"),
             ],
-          )
+          ),
+          SizedBox(height: 20,),
 
         ],
       ),
