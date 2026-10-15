@@ -1,8 +1,6 @@
-import 'package:crafty_bay/app/assets_path.dart';
+import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../l10n/app_localizations.dart';
 import '../widgets/app_logo.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,6 +13,20 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    _navigateToSignInScreen();
+  }
+
+  void _navigateToSignInScreen(){
+    Future.delayed(const Duration(seconds: 2), () {
+      if (!mounted) return;
+      Navigator.pushReplacementNamed(context, SignInScreen.name);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               CircularProgressIndicator(
                 color: Colors.cyan[200],),
-              Text("${AppLocalizations.of(context)!.version} 1.0.0"),
+              Text("Version 1.0.0"),
             ],
           ),
           SizedBox(height: 20,),

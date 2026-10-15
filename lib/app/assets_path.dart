@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-
-
-
 class AssetsPath {
 
   static const String _imageBasePath = 'assets/images';

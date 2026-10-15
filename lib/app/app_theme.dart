@@ -12,6 +12,16 @@ class AppTheme {
       color: AppColors.themeColor,
     ),
     scaffoldBackgroundColor: Colors.white,
+    textTheme: TextTheme(
+      titleLarge: TextStyle(color: Colors.black, fontWeight: .w600, fontSize: 28),
+      labelLarge: TextStyle(color: Colors.grey, fontWeight: .w400,fontSize: 20),
+    ),
+      inputDecorationTheme: InputDecorationTheme(
+        contentPadding: .only(left: 12),
+        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.themeColor),),
+        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.themeColor, width: 2),),
+        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.redAccent, width: 2),),
+  ),
   );
 
   static final ThemeData _darkThemeData = ThemeData(

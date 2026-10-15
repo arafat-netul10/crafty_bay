@@ -5,7 +5,7 @@ import '../../../../app/assets_path.dart';
 
 class AppLogo extends StatelessWidget {
   const AppLogo({
-    super.key, this.width = 320
+    super.key, this.width = 160
   });
 
   final double width;
