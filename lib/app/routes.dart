@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../features/auth/presentation/screens/home_screen.dart';
 import '../features/auth/presentation/screens/verify_otp.dart';
+import '../features/shared/presentation/presentation/main_nav_holder_screen.dart';
 
 class AppRoutes {
   static MaterialPageRoute<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -29,6 +30,10 @@ class AppRoutes {
 
       case VerifyOTP.name:
         widget = VerifyOTP();
+        break;
+
+      case MainNavHolderScreen.name:
+        widget = MainNavHolderScreen();
         break;
 
       default:

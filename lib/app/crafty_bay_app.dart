@@ -5,6 +5,8 @@ import 'package:crafty_bay/features/auth/presentation/screens/splash_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../features/shared/presentation/providers/main_nav_holder_provider.dart';
+
 class CraftyBayApp extends StatefulWidget {
 
   const CraftyBayApp({super.key});
@@ -27,8 +29,11 @@ class _CraftyBayAppState extends State<CraftyBayApp> {
   @override
   Widget build(BuildContext context) {
 
-    return ChangeNotifierProvider.value(
-      value: _themeModeProvider,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ThemeModeProvider()),
+        ChangeNotifierProvider(create: (context) => MainNavHolderProvider()),
+      ],
       child: Consumer<ThemeModeProvider>(
         builder: (context, themeModeProvider, _) {
           return MaterialApp(
