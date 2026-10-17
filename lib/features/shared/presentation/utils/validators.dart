@@ -6,6 +6,13 @@ class Validators {
     return null;
   }
 
+  String? validateName(String? input) {
+    if(input == null || input.isEmpty){
+      return "Please enter your name";
+    }
+    return null;
+  }
+
   String? validateEmail(String? input) {
     if (input == null || input.isEmpty) {
       return "Please enter your email";
@@ -16,6 +23,20 @@ class Validators {
     }
     if (input == '') {
       return "Please enter valid email";
+    }
+    return null;
+  }
+
+  String? validateCity(String? input) {
+    if(input == null || input.isEmpty){
+      return "Please enter your city";
+    }
+    return null;
+  }
+
+  String? validateMobile(String? input) {
+    if(input == null || input.isEmpty){
+      return "Please enter your mobile number";
     }
     return null;
   }
@@ -35,10 +56,6 @@ class Validators {
   String? validateConfirmPassword(String? input) {
     if (input == null || input.isEmpty) {
       return "Please enter your password";
-    }
-
-    if (input != validatePassword(input)) {
-      return "Passwords do not match";
     }
 
     return null;

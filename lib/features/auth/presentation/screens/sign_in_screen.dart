@@ -1,5 +1,6 @@
 import 'package:crafty_bay/features/auth/presentation/screens/home_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:crafty_bay/features/auth/presentation/screens/verify_otp.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
 import 'package:crafty_bay/features/shared/presentation/utils/validators.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   void onTapSignInButton(){
     if(_formKey.currentState!.validate()){
-      Navigator.pushNamed(context, HomeScreen.name);
+      Navigator.pushNamed(context, VerifyOTP.name);
     }
 
   }

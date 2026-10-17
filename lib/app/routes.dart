@@ -4,13 +4,13 @@ import 'package:crafty_bay/features/auth/presentation/screens/splash_screen.dart
 import 'package:flutter/material.dart';
 
 import '../features/auth/presentation/screens/home_screen.dart';
+import '../features/auth/presentation/screens/verify_otp.dart';
 
-class AppRoutes{
-  static MaterialPageRoute<dynamic>? onGenerateRoute(RouteSettings settings){
-
+class AppRoutes {
+  static MaterialPageRoute<dynamic>? onGenerateRoute(RouteSettings settings) {
     Widget widget = SizedBox();
 
-    switch(settings.name){
+    switch (settings.name) {
       case SplashScreen.name:
         widget = SplashScreen();
         break;
@@ -23,15 +23,17 @@ class AppRoutes{
         widget = SignUpScreen();
         break;
 
-        case HomeScreen.name:
+      case HomeScreen.name:
         widget = HomeScreen();
         break;
 
-        default:
-          widget = SplashScreen();
+      case VerifyOTP.name:
+        widget = VerifyOTP();
+        break;
+
+      default:
+        widget = SplashScreen();
     }
     return MaterialPageRoute(builder: (ctx) => widget);
-
   }
-
 }

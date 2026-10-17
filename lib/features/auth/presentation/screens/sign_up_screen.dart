@@ -1,4 +1,5 @@
 import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
+import 'package:crafty_bay/features/auth/presentation/screens/verify_otp.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
 
@@ -19,14 +20,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _cityController = TextEditingController();
+  final TextEditingController _mobileController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   void onTapSignUpButton(){
-    Navigator.pushNamed(context, SignInScreen.name);
-
+    if(_formKey.currentState!.validate()){
+      Navigator.pushNamed(context, VerifyOTP.name);
+    }
   }
   void onTapSignInButton(){
     Navigator.pop(context);
@@ -36,7 +40,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   void dispose(){
     _nameController.dispose();
     _emailController.dispose();
+    _mobileController.dispose();
+    _cityController.dispose();
     _passwordController.dispose();
+    _confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -56,7 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 80), AppLogo(width: 160),
                   Text("Welcome to Crafty Bay", style: Theme.of(context).textTheme.titleLarge,),
                   const SizedBox(height: 6),
-                  Text("Get started with us with your details", style: Theme.of(context).textTheme.labelLarge,),
+                  Text("Create an account to get started", style: Theme.of(context).textTheme.labelLarge,),
 
                   const SizedBox(height: 16),
                   //Name
@@ -67,12 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       prefixIcon: Icon(Icons.person, color: AppColors.themeColor,),
                       labelText: "Name",
                     ),
-                    validator: (String ? value){
-                      if(value == null || value.isEmpty){
-                        return "Please enter your name";
-                      }
-                      return null;
-                    },
+                    validator: (String ? value) => Validators().validateName(value),
                   ),
                   const SizedBox(height: 8),
 
@@ -86,6 +88,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       labelText: "Email",
                     ),
                     validator: (String? value) => Validators().validateEmail(value),
+                  ),
+                  const SizedBox(height: 8),
+
+                  //Mobile
+                  TextFormField(
+                    controller: _mobileController,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.phone_android_outlined, color: AppColors.themeColor,),
+                      labelText: "Mobile Number",
+                    ),
+                    validator: (String? value) => Validators().validateMobile(value),
+                  ),
+                  const SizedBox(height: 8),
+
+                  //City
+                  TextFormField(
+                    controller: _cityController,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.location_on, color: AppColors.themeColor,),
+                      labelText: "City",
+                    ),
+                    validator: (String? value) => Validators().validateCity(value),
                   ),
                   const SizedBox(height: 8),
 

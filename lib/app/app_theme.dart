@@ -21,6 +21,8 @@ class AppTheme {
         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.themeColor),),
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.themeColor, width: 2),),
         errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.redAccent, width: 2),),
+        border: OutlineInputBorder(borderSide: BorderSide(color: AppColors.themeColor),),
+
   ),
   );
 
