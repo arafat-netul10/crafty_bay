@@ -1,4 +1,4 @@
-import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
+
 import 'package:crafty_bay/features/shared/presentation/presentation/main_nav_holder_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void _navigateToSignInScreen(){
     Future.delayed(const Duration(seconds: 2), () {
       if (!mounted) return;
-      Navigator.pushReplacementNamed(context, MainNavHolderScreen.name);
+      Navigator.pushNamedAndRemoveUntil(context, MainNavHolderScreen.name, (predicate) => false);
     });
   }
 

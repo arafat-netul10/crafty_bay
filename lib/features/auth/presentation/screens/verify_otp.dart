@@ -1,4 +1,4 @@
-import 'package:crafty_bay/features/auth/presentation/screens/home_screen.dart';
+import 'package:crafty_bay/features/home/presentation/screens/home_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
 import 'package:flutter/material.dart';

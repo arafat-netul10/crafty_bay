@@ -16,6 +16,9 @@ class AppTheme {
       titleLarge: TextStyle(color: Colors.black, fontWeight: .w600, fontSize: 28),
       labelLarge: TextStyle(color: Colors.grey, fontWeight: .w400,fontSize: 20),
     ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.white,
+      ),
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: .only(left: 12),
         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.themeColor),),
