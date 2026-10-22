@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../../shared/presentation/widgets/category_card.dart';
 
 class SectionElements extends StatelessWidget {
@@ -15,7 +14,7 @@ class SectionElements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
+      height: 110,
       child: ListView.separated(
           scrollDirection: .horizontal,
           itemCount: 10,

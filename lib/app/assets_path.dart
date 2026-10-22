@@ -4,5 +4,6 @@ class AssetsPath {
 
   static const logoPng = '$_imageBasePath/Crafty-Bay-logo.png';
   static const logoNavPng = '$_imageBasePath/CraftyBay-nav.png';
+  static const shoeImagePng = '$_imageBasePath/White and Navy Nike Running Sneaker.png';
 
 }
