@@ -3,6 +3,7 @@ import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dar
 import 'package:crafty_bay/features/auth/presentation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../features/category/presentation/screens/category_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
 import '../features/auth/presentation/screens/verify_otp.dart';
 import '../features/shared/presentation/presentation/main_nav_holder_screen.dart';
@@ -35,6 +36,10 @@ class AppRoutes {
       case MainNavHolderScreen.name:
         widget = MainNavHolderScreen();
         break;
+
+        case CategoryScreen.name:
+          widget = CategoryScreen();
+          break;
 
       default:
         widget = SplashScreen();

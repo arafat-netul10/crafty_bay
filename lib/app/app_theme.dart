@@ -14,10 +14,16 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.white,
     textTheme: TextTheme(
       titleLarge: TextStyle(color: Colors.black, fontWeight: .w600, fontSize: 28),
+      titleMedium: TextStyle(color: Colors.black, fontWeight: .w600, fontSize: 20),
       labelLarge: TextStyle(color: Colors.grey, fontWeight: .w400,fontSize: 20),
     ),
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.white,
+        titleTextStyle: TextStyle(
+          fontSize: 22,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: .only(left: 12),
