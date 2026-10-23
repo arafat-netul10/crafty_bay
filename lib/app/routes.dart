@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../features/category/presentation/screens/category_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
 import '../features/auth/presentation/screens/verify_otp.dart';
+import '../features/products/presentation/screens/product_list_by_category.dart';
 import '../features/shared/presentation/presentation/main_nav_holder_screen.dart';
 
 class AppRoutes {
@@ -37,9 +38,17 @@ class AppRoutes {
         widget = MainNavHolderScreen();
         break;
 
-        case CategoryScreen.name:
-          widget = CategoryScreen();
-          break;
+      case CategoryScreen.name:
+        widget = CategoryScreen();
+        break;
+
+      case ProductListByCategory.name:
+        Map<String, dynamic> args = settings.arguments as Map<String, dynamic>;
+        widget = ProductListByCategory(
+          categoryId: args["categoryId"],
+          categoryName: args["categoryName"],
+        );
+        break;
 
       default:
         widget = SplashScreen();

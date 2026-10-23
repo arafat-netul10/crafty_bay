@@ -1,4 +1,3 @@
-
 import 'package:crafty_bay/features/home/presentation/widgets/product_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -37,26 +36,57 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               ProductSearchBar(),
               HomeCarouselSlider(),
+
+              //Category
               SectionHeader(
                 headerText: "Category",
                 onTapSeeAll: () {
                   context.read<MainNavHolderProvider>().navigateToCategory();
                 },
               ),
-              SectionElements(icon: Icons.computer, name: "Computer"),
+              SectionElements(icon: Icons.computer, name: "Electronics"),
+
+              //Popular
               SectionHeader(
                 headerText: "Popular",
                 onTapSeeAll: () {
                   context.read<MainNavHolderProvider>().navigateToCategory();
                 },
               ),
-
               SingleChildScrollView(
                 scrollDirection: .horizontal,
                 child: Row(
-                    children: [1,2,3,4,5].map((e) => ProductCard()).toList()),
-              )
+                  children: [1, 2, 3, 4, 5].map((e) => ProductCard()).toList(),
+                ),
+              ),
 
+              //Special
+              SectionHeader(
+                headerText: "Special",
+                onTapSeeAll: () {
+                  context.read<MainNavHolderProvider>().navigateToCategory();
+                },
+              ),
+              SingleChildScrollView(
+                scrollDirection: .horizontal,
+                child: Row(
+                  children: [1, 2, 3, 4, 5].map((e) => ProductCard()).toList(),
+                ),
+              ),
+
+              //New
+              SectionHeader(
+                headerText: "New",
+                onTapSeeAll: () {
+                  context.read<MainNavHolderProvider>().navigateToCategory();
+                },
+              ),
+              SingleChildScrollView(
+                scrollDirection: .horizontal,
+                child: Row(
+                  children: [1, 2, 3, 4, 5].map((e) => ProductCard()).toList(),
+                ),
+              ),
             ],
           ),
         ),
@@ -64,5 +94,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
