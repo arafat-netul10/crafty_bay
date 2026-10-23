@@ -31,8 +31,15 @@ class AppTheme {
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.themeColor, width: 2),),
         errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.redAccent, width: 2),),
         border: OutlineInputBorder(borderSide: BorderSide(color: AppColors.themeColor),),
-
   ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: ButtonStyle(
+          backgroundColor: WidgetStateProperty.all(AppColors.themeColor),
+          shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)))
+      ),
+
+    ),
+
   );
 
   static final ThemeData _darkThemeData = ThemeData(

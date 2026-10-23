@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../app/app_colors.dart';
+import '../../../cart/presentation/screens/cart_screen.dart';
+import '../../../wishlist/presentation/screens/wishlist_screen.dart';
 import '../../../category/presentation/screens/category_screen.dart';
 import '../../../home/presentation/screens/home_screen.dart';
 
@@ -21,8 +23,8 @@ class _MainNavHolderScreenState extends State<MainNavHolderScreen> {
   final List<Widget> _screens = [
     HomeScreen(),
     CategoryScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    CartScreen(),
+    WishlistScreen(),
   ];
 
 
@@ -42,7 +44,7 @@ class _MainNavHolderScreenState extends State<MainNavHolderScreen> {
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: "Category"),
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Category"),
+            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
             BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favourite"),
           ],)
         );
