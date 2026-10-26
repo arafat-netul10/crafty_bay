@@ -42,7 +42,8 @@ class TotalPriceAndCheckOutSection extends StatelessWidget {
           SizedBox(
               width: 140,
               child: FilledButton(
-                  onPressed: (){}, child: Text("Checkout"))),
+                  onPressed: (){}, child: Text("Checkout",
+              style: TextStyle(fontSize: 16),))),
         ],
       ),
     );

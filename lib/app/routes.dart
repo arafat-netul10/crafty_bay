@@ -7,8 +7,10 @@ import '../features/cart/presentation/screens/cart_screen.dart';
 import '../features/category/presentation/screens/category_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
 import '../features/auth/presentation/screens/verify_otp.dart';
+import '../features/products/presentation/screens/product_details_screen.dart';
 import '../features/products/presentation/screens/product_list_by_category.dart';
 import '../features/shared/presentation/presentation/main_nav_holder_screen.dart';
+import '../features/wishlist/presentation/screens/wishlist_screen.dart';
 
 class AppRoutes {
   static MaterialPageRoute<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -51,9 +53,17 @@ class AppRoutes {
         );
         break;
 
-        case CartScreen.name:
-          widget = CartScreen();
-          break;
+      case CartScreen.name:
+        widget = CartScreen();
+        break;
+
+      case WishlistScreen.name:
+        widget = WishlistScreen();
+        break;
+      case ProductDetailsScreen.name:
+        final String productId = settings.arguments as String;
+        widget = ProductDetailsScreen(productId: productId,);
+        break;
 
       default:
         widget = SplashScreen();
