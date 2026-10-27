@@ -70,6 +70,6 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
           ),
         )
       ],
-    );();
+    );
   }
 }

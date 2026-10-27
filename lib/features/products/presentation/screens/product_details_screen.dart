@@ -1,4 +1,3 @@
-import 'package:crafty_bay/features/cart/presentation/widgets/total_price_and_checkout_section.dart';
 import 'package:crafty_bay/features/products/presentation/widgets/size_picker.dart';
 import 'package:crafty_bay/features/shared/presentation/widgets/inc_dec_button.dart';
 import 'package:flutter/material.dart';

@@ -27,6 +27,7 @@ class OtpTimerProvider extends ChangeNotifier {
 
       notifyListeners();
     });
+
   }
 
   @override

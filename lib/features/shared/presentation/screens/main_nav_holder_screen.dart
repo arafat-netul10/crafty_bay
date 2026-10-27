@@ -32,23 +32,23 @@ class _MainNavHolderScreenState extends State<MainNavHolderScreen> {
   @override
   Widget build(BuildContext context) {
     return Consumer<MainNavHolderProvider>(
-      builder: (context, mainNavHolderProvider, _) {
-        return Scaffold(
-          body: _screens[mainNavHolderProvider.currentIndex],
-          bottomNavigationBar: BottomNavigationBar(
-            unselectedItemColor: Colors.grey,
-          selectedItemColor: AppColors.themeColor,
-          showUnselectedLabels: true,
-          currentIndex: mainNavHolderProvider.currentIndex,
-          onTap: mainNavHolderProvider.changeIndex,
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: "Category"),
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favourite"),
-          ],)
-        );
-      }
+        builder: (context, mainNavHolderProvider, _) {
+          return Scaffold(
+              body: _screens[mainNavHolderProvider.currentIndex],
+              bottomNavigationBar: BottomNavigationBar(
+                unselectedItemColor: Colors.grey,
+                selectedItemColor: AppColors.themeColor,
+                showUnselectedLabels: true,
+                currentIndex: mainNavHolderProvider.currentIndex,
+                onTap: mainNavHolderProvider.changeIndex,
+                items: [
+                  BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+                  BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: "Category"),
+                  BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
+                  BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favourite"),
+                ],)
+          );
+        }
     );
   }
 }

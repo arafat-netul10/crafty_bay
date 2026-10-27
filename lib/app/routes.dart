@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/splash_screen.dart';
-import 'package:flutter/material.dart';
 
 import '../features/cart/presentation/screens/cart_screen.dart';
 import '../features/category/presentation/screens/category_screen.dart';
@@ -9,7 +9,7 @@ import '../features/home/presentation/screens/home_screen.dart';
 import '../features/auth/presentation/screens/verify_otp.dart';
 import '../features/products/presentation/screens/product_details_screen.dart';
 import '../features/products/presentation/screens/product_list_by_category.dart';
-import '../features/shared/presentation/presentation/main_nav_holder_screen.dart';
+import '../features/shared/presentation/screens/main_nav_holder_screen.dart';
 import '../features/wishlist/presentation/screens/wishlist_screen.dart';
 
 class AppRoutes {

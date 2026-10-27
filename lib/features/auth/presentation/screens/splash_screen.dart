@@ -1,5 +1,5 @@
 
-import 'package:crafty_bay/features/shared/presentation/presentation/main_nav_holder_screen.dart';
+import 'package:crafty_bay/features/shared/presentation/screens/main_nav_holder_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/app_logo.dart';

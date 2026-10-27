@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../app/app_colors.dart';
 import '../../../../app/constants.dart';
-import '../../../cart/presentation/screens/cart_screen.dart';
 
 class TotalPriceAndAddToCart extends StatelessWidget {
   const TotalPriceAndAddToCart({

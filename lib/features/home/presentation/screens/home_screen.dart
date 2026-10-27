@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     //   context.read<MainNavHolderProvider>().changeIndex(1);
     // }
 
-    final textTheme = Theme.of(context).textTheme;
+
 
     return Scaffold(
       appBar: HomeAppBar(),
