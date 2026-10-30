@@ -3,6 +3,7 @@ import 'package:crafty_bay/features/shared/presentation/widgets/inc_dec_button.d
 import 'package:flutter/material.dart';
 
 import '../../../../app/app_colors.dart';
+import '../../../reviews/presentation/screens/review_screen.dart';
 import '../widgets/color_picker.dart';
 import '../widgets/product_image_carousel.dart';
 import '../widgets/total_price_and_add_to_cart.dart';
@@ -71,7 +72,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 Text("4.5"),
                               ],
                             ),
-                            TextButton(onPressed: () {}, child: Text("Reviews", style: TextStyle(color: AppColors.themeColor),)),
+                            TextButton(onPressed: () {
+                              Navigator.pushNamed(context, ReviewScreen.name);
+                            },
+                                child: Text("Reviews", style: TextStyle(color: AppColors.themeColor),)),
                             Container(
                               padding: .all(2),
                               decoration: BoxDecoration(

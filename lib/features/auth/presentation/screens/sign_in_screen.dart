@@ -31,9 +31,16 @@ class _SignInScreenState extends State<SignInScreen> {
 
   }
   void onTapSignUpButton(){
+
+    if(_formKey.currentState!.validate()){
+
+    }
+
     Navigator.pushNamed(context, SignUpScreen.name);
 
   }
+
+
   void onTapForgotPassword(){
 
   }

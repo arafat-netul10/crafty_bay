@@ -37,8 +37,12 @@ class AppTheme {
           backgroundColor: WidgetStateProperty.all(AppColors.themeColor),
           shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)))
       ),
-
     ),
+
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: AppColors.themeColor,
+      foregroundColor: Colors.white,
+    )
 
   );
 
