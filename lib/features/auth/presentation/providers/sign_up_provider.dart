@@ -1,4 +1,4 @@
-import 'package:crafty_bay/app/get_network_calller.dart';
+import 'package:crafty_bay/app/get_network_caller.dart';
 import 'package:crafty_bay/app/urls.dart';
 import 'package:crafty_bay/core/service/network_caller/network_caller.dart';
 import 'package:crafty_bay/features/auth/data/models/sign_up_params.dart';

@@ -6,7 +6,7 @@ import 'package:crafty_bay/features/auth/presentation/screens/splash_screen.dart
 import '../features/cart/presentation/screens/cart_screen.dart';
 import '../features/category/presentation/screens/category_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
-import '../features/auth/presentation/screens/verify_otp.dart';
+import '../features/auth/presentation/screens/verify_otp_screen.dart';
 import '../features/products/presentation/screens/product_details_screen.dart';
 import '../features/products/presentation/screens/product_list_by_category.dart';
 import '../features/reviews/presentation/screens/add_review_screen.dart';
@@ -35,8 +35,9 @@ class AppRoutes {
         widget = HomeScreen();
         break;
 
-      case VerifyOTP.name:
-        widget = VerifyOTP();
+      case VerifyOtpScreen.name:
+        final email = settings.arguments as String;
+        widget = VerifyOtpScreen(email: email,);
         break;
 
       case MainNavHolderScreen.name:

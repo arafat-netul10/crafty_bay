@@ -1,3 +1,4 @@
+import 'package:crafty_bay/features/auth/presentation/providers/verify_otp_provider.dart';
 import 'package:crafty_bay/features/home/presentation/screens/home_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
@@ -6,23 +7,31 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../app/app_colors.dart';
+import '../../../shared/presentation/widgets/centered_progress_indicator.dart';
+import '../../../shared/presentation/widgets/show_snackbar_message.dart';
+import '../../data/models/verify_otp_params.dart';
 import '../providers/otp_timer_provider.dart';
 
-class VerifyOTP extends StatefulWidget {
-  const VerifyOTP({super.key});
+class VerifyOtpScreen extends StatefulWidget {
+  const VerifyOtpScreen({super.key, required this.email});
 
   static const String name = "/verifyOTP";
+  final String email;
 
   @override
-  State<VerifyOTP> createState() => _VerifyOTPState();
+  State<VerifyOtpScreen> createState() => _VerifyOtpScreenState();
 }
 
-class _VerifyOTPState extends State<VerifyOTP> {
+class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
   final PinInputController _oTPController = PinInputController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final OtpTimerProvider _otpTimerProvider = OtpTimerProvider(60);
+
+  final VerifyOtpProvider _verifyOtpProvider = VerifyOtpProvider();
+
+
 
   @override
   void initState() {
@@ -35,6 +44,22 @@ class _VerifyOTPState extends State<VerifyOTP> {
     if (_formKey.currentState!.validate()) {
       Navigator.pushNamed(context, HomeScreen.name);
     }
+  }
+
+  Future<void> _verifyOtp () async {
+    final bool isSuccess = await _verifyOtpProvider.verifyOtp(
+      VerifyOtpParams(
+        email: _oTPController.text,
+        otp: _oTPController.text,
+      ),
+    );
+  if(isSuccess){
+    Navigator.pushNamed(context, HomeScreen.name);
+  }
+  else{
+    showSnackBarMessage(context, _verifyOtpProvider.errorMessage!);
+  }
+
   }
 
   void onTapSignUpButton() {
@@ -53,8 +78,11 @@ class _VerifyOTPState extends State<VerifyOTP> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
-      value: _otpTimerProvider,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: _otpTimerProvider),
+        ChangeNotifierProvider.value(value: _verifyOtpProvider),
+      ],
       child: Scaffold(
         body: SingleChildScrollView(
           child: SafeArea(
@@ -105,19 +133,27 @@ class _VerifyOTPState extends State<VerifyOTP> {
                     SizedBox(
                       height: 50,
                       width: double.maxFinite,
-                      child: ElevatedButton(
-                        onPressed: onTapVerifyButton,
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          backgroundColor: AppColors.themeColor,
-                          foregroundColor: Colors.white,
-                        ),
-                        child: Text(
-                          "Verify",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
+                      child: Consumer(
+                        builder: (context, _, _) {
+                          if (_verifyOtpProvider.verifyOtpInProgress) {
+                            return CenteredProgressIndicator();
+                          }
+
+                          return ElevatedButton(
+                            onPressed: onTapVerifyButton,
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              backgroundColor: AppColors.themeColor,
+                              foregroundColor: Colors.white,
+                            ),
+                            child: Text(
+                              "Verify OTP",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          );
+                        }
                       ),
                     ),
                     const SizedBox(height: 26),
